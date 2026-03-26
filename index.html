@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Quote - Bhagavad Geeta </title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+Devanagari:wght@400;500&family=Poppins:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-border"></div>
+
+  <header>
+    <span class="om-symbol">ॐ</span>
+    <h1>Bhagavad Geeta</h1>
+    <p class="subtitle">Quote of the Day</p>
+    <p id="dateTimeDisplay" style="color: var(--cream); font-size: 14px; margin: 8px 0; font-style: italic; letter-spacing: 0.5px;"></p>
+    <!-- <p class="subtitle">The Song of the Divine — Wisdom of the Ages</p> -->
+    <div class="divider" style="margin: 16px auto 0;">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line right"></div>
+    </div>
+  </header>
+
+  <div class="card-wrapper">
+    <!-- <div class="card-corner tl"></div>
+    <div class="card-corner tr"></div>
+    <div class="card-corner bl"></div>
+    <div class="card-corner br"></div> -->
+
+    <div class="card" id="mainCard">
+      <div class="loader" id="loader">
+        <div class="lotus-spinner"></div>
+        <span class="loader-text">Way around wisdom...</span>
+      </div>
+
+      <p class="sanskrit" id="sanskrit"></p>
+      <p class="translation" id="translation"></p>
+
+      <div class="reference" id="reference">
+        <div class="ref-line"></div>
+        <span class="ref-text" id="refText"></span>
+        <div class="ref-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mandala mandala-left">
+    <img src="mandala.svg" alt="Mandala Left" />
+  </div>
+
+  <div class="mandala mandala-right">
+    <img src="mandala.svg" alt="Mandala Right" />
+  </div>
+
+  <footer>
+    <p>Shrimad Bhagavad Geeta · Swami Sivananda Translation</p>
+    <p style="margin-top:4px;">API by vedicscriptures.github.io</p>
+  </footer>
+
+  <div style="visibility: hidden;">
+      <div id="youtubeBgPlayer"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // Display current day and time
+      function updateDateTime() {
+        const now = new Date();
+        const options = { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        };
+        const dateTimeString = now.toLocaleDateString('en-US', options);
+        document.getElementById('dateTimeDisplay').textContent = dateTimeString;
+      }
+      
+      // Update on page load
+      updateDateTime();
+      // Update every second
+      setInterval(updateDateTime, 1000);
+
+      let player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtubeBgPlayer', {
+          height: '0',
+          width: '0',
+          videoId: 'mGC-S7n_HkE',
+          events: {
+            'onReady': onPlayerReady
+          },
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            start: 10
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        // Set volume to 30%
+        event.target.setVolume(40);
+        event.target.playVideo();
+      }
+    </script>
+</body>
+</html>
