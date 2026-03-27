@@ -18,9 +18,10 @@
 
   <header>
     <span class="om-symbol">ॐ</span>
-    <h1>Bhagavad Geeta</h1>
+    <h1>भागवत् गीता</h1>
+    <!-- <h1>Bhagavad geetA</h1> -->
     <p class="subtitle">Quote of the Day</p>
-    <p id="dateTimeDisplay" style="color: var(--cream); font-size: 14px; margin: 8px 0; font-style: italic; letter-spacing: 0.5px;"></p>
+    <p id="dateTimeDisplay" style="color: var(--cream); font-size: 14px; margin: 8px; font-style: none; letter-spacing: 0.5px; opacity: 70%;"></p>
     <!-- <p class="subtitle">The Song of the Divine — Wisdom of the Ages</p> -->
     <div class="divider" style="margin: 16px auto 0;">
       <div class="divider-line"></div>
@@ -53,11 +54,11 @@
   </div>
 
   <div class="mandala mandala-left">
-    <img src="mandala.svg" alt="Mandala Left" />
+    <img src="assets/mandala.svg" alt="Mandala Left" />
   </div>
 
   <div class="mandala mandala-right">
-    <img src="mandala.svg" alt="Mandala Right" />
+    <img src="assets/mandala.svg" alt="Mandala Right" />
   </div>
 
   <footer>
@@ -83,10 +84,6 @@
           year: 'numeric', 
           month: 'long', 
           day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: true
         };
         const dateTimeString = now.toLocaleDateString('en-US', options);
         document.getElementById('dateTimeDisplay').textContent = dateTimeString;

@@ -42,7 +42,7 @@ body {
     min-height: 100vh;
     background-color: #1a0a00;
     background-image:
-        url(bg.gif),
+        url(assets/bg.gif),
         radial-gradient(ellipse at 20% 20%, rgba(212, 160, 23, 0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 80%, rgba(160, 0, 28, 0.15) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 50%, rgba(255, 153, 51, 0.05) 0%, transparent 70%);
@@ -98,21 +98,26 @@ header {
 }
 
 h1 {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: Amita, normal;
+    /* font-family: 'Cinzel Decorative', cursive; */
     font-size: clamp(1.4rem, 5vw, 2.8rem);
     font-weight: 700;
     color: var(--gold);
     letter-spacing: 0.08em;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     line-height: 1.2;
+    text-decoration: double underline var(--gold) 1px;
+    text-underline-offset: 25%;
 }
 
 .subtitle {
     font-family: 'EB Garamond', serif;
-    font-style: italic;
+    /* font-style: italic; */
     font-size: clamp(0.95rem, 2.5vw, 1.15rem);
     color: var(--deep-gold);
-    margin-top: 8px;
+    margin-top: 4%;
+    text-transform: uppercase;
+    font-weight: 900;
     letter-spacing: 0.12em;
 }
 
@@ -186,7 +191,7 @@ h1 {
 }
 
 .card {
-    background-image: url(paper.jpg);
+    background-image: url(assets/paper.jpg);
     background-size: cover;
     filter: blur(0.8);
     /* background-filter: brightness(0.1); */
